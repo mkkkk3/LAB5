@@ -1,13 +1,25 @@
 # Exemplary calculator functions
 
-def add (a: int , b: int) -> int:
-  return a + b
+"""
+Module: utils
+Contains basic calculator functions for addition, subtraction, multiplication, and division.
+"""
 
-def subtract (a: int , b: int) -> int:
-  return a - b
+def add(a: int, b: int) -> int:
+    """Return the sum of a and b."""
+    return a + b
 
-def multiply (a: int , b: int) -> int:
-  return a * b
 
-def divide (a: int , b: int) -> float:
-  return a / b
+def subtract(a: int, b: int) -> int:
+    """Return the result of subtracting b from a."""
+    return a - b
+
+
+def multiply(a: int, b: int) -> int:
+    """Return the product of a and b."""
+    return a * b
+
+
+def divide(a: int, b: int) -> float:
+    """Return the result of dividing a by b."""
+    return a / b
