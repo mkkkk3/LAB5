@@ -30,3 +30,30 @@ def test_multiply(a, b, expected):
 def test_divide(a, b, expected):
     result = utils.divide(a, b)
     assert result == expected
+
+
+@pytest.mark.parametrize(
+    "input_val, expected",
+    [
+        (0, "0"),
+        (1, "1"),
+        (2, "10"),
+        (5, "101"),
+        (100, "1100100"),
+    ],
+)
+def test_to_binary_valid(input_val, expected):
+    result = utils.to_binary(input_val)
+    assert result == expected
+
+
+@pytest.mark.parametrize("input_val", [-1, 101, 999])
+def test_to_binary_out_of_range(input_val):
+    with pytest.raises(ValueError, match="Input must be between 0 and 100."):
+        utils.to_binary(input_val)
+
+
+@pytest.mark.parametrize("input_val", [1.5, "10", None, [10], {5: "five"}])
+def test_to_binary_invalid_type(input_val):
+    with pytest.raises(ValueError, match="Input must be an integer."):
+        utils.to_binary(input_val)
